@@ -1,0 +1,9 @@
+pytest
+pytest-html
+pytest-xdist
+pytest-logging
+pytest-order
+xlrd
+xlwt
+selenium
+allure-pytest
