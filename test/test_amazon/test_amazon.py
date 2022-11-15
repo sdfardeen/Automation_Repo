@@ -50,11 +50,11 @@ class TestProgram:
         self.cv.switching_windows(1)
 
         assert home_page_product_name == details_page_product_name, "product name validataion failed"
-        self.cv.window_scroll_by_element(Product_details_page.add_to_cart_locator, 0)
+        self.cv.window_scroll_by_element(Product_details_page.product_page_add_to_cart_locator, 0)
 
-        assert self.cv.is_element_present(Product_details_page.add_to_cart_locator), "add_to_cart_locator not valid"
-        self.cv.click_objects(Product_details_page.add_to_cart_locator)
-        self.cv.click_objects(Product_details_page.go_to_cart_locator)
+        assert self.cv.is_element_present(Product_details_page.product_page_add_to_cart_locator), "add_to_cart_locator not valid"
+        self.cv.click_objects(Product_details_page.product_page_add_to_cart_locator)
+        self.cv.click_objects(Product_details_page.product_page_go_to_cart_locator)
         # cross check  or use explicit wait
         time.sleep(10)
 
@@ -64,7 +64,7 @@ class TestProgram:
         self.cv.click_objects(AmazonHeader.home_page_add_cart)
 
         assert quantity == 1, "validation failed for cart quantitiy"
-        self.cv.click_objects(Product_details_page.proceed_to_buy)
+        self.cv.click_objects(Product_details_page.product_page_proceed_to_buy)
 
         assert self.cv.is_element_present(Amazon_signin.user_name_locator), "user_name_locator not valid"
         self.cv.send_data(Amazon_signin.user_name_locator, constants.username)
@@ -75,12 +75,12 @@ class TestProgram:
         assert self.cv.is_element_present(Amazon_signin.password_locator), "password_locator not valid"
         self.cv.send_data(Amazon_signin.password_locator, constants.password)
 
-        assert self.cv.is_element_present(Amazon_signin.sign_in_loccator), "sign_in_loccator not valid"
-        self.cv.click_objects(Amazon_signin.sign_in_loccator)
+        assert self.cv.is_element_present(Amazon_signin.sign_in_locator), "sign_in_loccator not valid"
+        self.cv.click_objects(Amazon_signin.sign_in_locator)
 
         assert self.cv.is_element_present(
-            Amazon_delivery_page.checkout_this_address_locator), "deliver_t0_this_addrs_locator not valid"
-        self.cv.click_objects(Amazon_delivery_page.checkout_this_address_locator)
+            Amazon_delivery_page.address_page_checkout_this_address_locator), "deliver_t0_this_addrs_locator not valid"
+        self.cv.click_objects(Amazon_delivery_page.address_page_checkout_this_address_locator)
 
     def teardown_method(self):
         self.cv.close_browser()
