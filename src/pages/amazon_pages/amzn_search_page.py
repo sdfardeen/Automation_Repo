@@ -7,10 +7,10 @@ class Amazon_search_page:
 
 
 class Product_details_page:
-    add_to_cart_locator = (By.XPATH, "//input[@id='add-to-cart-button']")
-    go_to_cart_locator = (By.XPATH, "//input[@aria-labelledby='attach-sidesheet-view-cart-button-announce']")
-    proceed_to_checkout_locator = (By.XPATH, "//input[@aria-labelledby='attach-sidesheet-checkout-button-announce']")
-    side_close_key = (By.XPATH, "//a[@id='attach-close_sideSheet-link']")
-    proceed_to_buy = (By.XPATH, "//input[@name='proceedToRetailCheckout']")
-    product_in_add_cart_locator = (By.XPATH, "//span[@class='a-truncate-cut'][contains(text(),'Sky Blue, 6GB RAM]")
-    quantity_locator = (By.XPATH, "//span[@class='a-button-text a-declarative']")
+    product_page_add_to_cart_locator = (By.XPATH, "//input[@id='add-to-cart-button']")
+    product_page_go_to_cart_locator = (By.XPATH, "//input[@aria-labelledby='attach-sidesheet-view-cart-button-announce']")
+    product_page_proceed_to_checkout_locator = (By.XPATH, "//input[@aria-labelledby='attach-sidesheet-checkout-button-announce']")
+    product_page_side_close_key = (By.ID, "attach-close_sideSheet-link")
+    product_page_proceed_to_buy = (By.NAME, "proceedToRetailCheckout")
+    product_page_product_in_add_cart_locator = (By.XPATH, "//span[@class='a-truncate-cut'][contains(text(),'Sky Blue, 6GB RAM]")
+    shopping_cart_quantity_locator = (By.CLASS_NAME, "a-button-text a-declarative")
